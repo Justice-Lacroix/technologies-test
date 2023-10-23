@@ -1,18 +1,20 @@
-name: Compile C Program
+name: Build
 
-on:
-  push:
-    branches:
-      - main
-      jobs:
+on: [push]
+
+jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout Repository
         uses: actions/checkout@v2
 
-      -     - name: Compile Hello World Program
+      - name: Build C/C++ Program
         run: |
-          gcc -o helloworld helloworld.c
+          g++ main.cpp -o main
         working-directory: ${{ github.workspace }}
+
+      - name: Execute Program
+        run: |
+          ./main
