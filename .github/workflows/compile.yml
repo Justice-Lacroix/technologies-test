@@ -17,4 +17,4 @@ jobs:
 
       - name: Execute Program
         run: |
-          ./main
+          ./helloworld
