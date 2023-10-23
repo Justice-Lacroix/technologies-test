@@ -1,4 +1,4 @@
-name: Compile C Program
+name: compile C Program
 
 on:
   push:
