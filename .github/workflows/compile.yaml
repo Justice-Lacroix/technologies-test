@@ -1,25 +1,22 @@
-name: compile C Program
+name: Build
 
-on:
-  push:
-    branches:
-      - main
+on: [push]
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-        with:
-          submodules: recursive
-          ref: main
-        env:
-          # Specify the Node.js version for the action
-          node-version: 16
+    
+name: Checkout Repository
+    uses: actions/checkout@v2
 
-      - name: compile Hello World Program
-        run: |
-          gcc -o helloworld helloworld.c
-        working-directory: ${{ github.workspace }}
+    
+name: Build C/C++ Program
+    run: |
+      g++ main.cpp -o main
+    working-directory: ${{ github.workspace }}
+
+    
+name: Execute Program
+    run: |./main
