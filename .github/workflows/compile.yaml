@@ -4,7 +4,8 @@ on:
   push:
     branches:
       - main
-      jobs:
+
+jobs:
   build:
     runs-on: ubuntu-latest
 
@@ -12,7 +13,7 @@ on:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      -     - name: Compile Hello World Program
+      - name: Compile Hello World Program
         run: |
           gcc -o helloworld helloworld.c
         working-directory: ${{ github.workspace }}
