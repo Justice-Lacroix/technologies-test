@@ -12,6 +12,12 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+        with:
+          submodules: recursive
+          ref: main
+        env:
+          # Specify the Node.js version for the action
+          node-version: 16
 
       - name: Compile Hello World Program
         run: |
