@@ -7,16 +7,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    
-name: Checkout Repository
-    uses: actions/checkout@v2
+      - name: Checkout Repository
+        uses: actions/checkout@v2
 
-    
-name: Build C/C++ Program
-    run: |
-      g++ main.cpp -o main
-    working-directory: ${{ github.workspace }}
+      - name: Build C/C++ Program
+        run: |
+          g++ main.cpp -o main
+        working-directory: ${{ github.workspace }}
 
-    
-name: Execute Program
-    run: |./main
+      - name: Execute Program
+        run: |
+          ./main
