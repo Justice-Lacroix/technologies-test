@@ -12,9 +12,9 @@ jobs:
 
       - name: Build C/C++ Program
         run: |
-          g++ main.cpp -o main
+          g++ helloworld.c -o helloworld
         working-directory: ${{ github.workspace }}
 
       - name: Execute Program
         run: |
-          ./main
+          ./helloworld
