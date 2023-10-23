@@ -19,7 +19,7 @@ jobs:
           # Specify the Node.js version for the action
           node-version: 16
 
-      - name: Compile Hello World Program
+      - name: compile Hello World Program
         run: |
           gcc -o helloworld helloworld.c
         working-directory: ${{ github.workspace }}
